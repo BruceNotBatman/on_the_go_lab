@@ -1,11 +1,18 @@
 letters ='ABCDEFGHIJKLMNOPQRSTUVXYZabcdefghijklmnopqrstuvwxyz'
-status = True
-word = input('Enter a word: ')
+allowed='ABCDEFGHIJKLMNOPQRSTUVXYZabcdefghijklmnopqrstuvwxyz 1234567890'
 
-for ch in word:
-    if ch not in letters:
-        status = False
-if status == True:
-    print('all characters are letters')
-else:
-    print('Error!')
+word = input('Enter a word: ')
+def checking():
+    status = True
+    if word[0] not in letters:
+        print('Error: first character is a special character')
+    else:    
+        for ch in word:
+            if ch not in allowed:
+                status = False
+        if status == True:
+            print('all characters are letters')
+        else:
+            print('Error!')
+
+checking()
